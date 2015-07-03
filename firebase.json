@@ -1,0 +1,9 @@
+{
+  "firebase": "voicemove",
+  "public": "./www",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Voice Moves</title>
+    </head>
+
+    <body>
+        <div class="app" ng-controller="Shell as vm">
+            <h1>Voice Moves</h1>
+            <h3 class="centered-text">HTML Fusion Lab X</h3>
+
+            <div ng-hide="vm.vrRoom">
+                <div id="deviceready" class="event listening blink centered-text" ng-click="init()">Start Demo</div>
+            </div>
+
+            <div class="virtualContainer" ng-controller="VoiceInput as vi" ng-show="vm.vrRoom">     
+                <div id="deviceready" class="blink">
+                    <button class="event" ng-click="speechRecog()"><b>Start recognition</b></button>
+                </div>
+
+                <div class="ball-one ball-one-position" ng-style="orangeBallFrame"></div>
+                <div class="ball-two ball-two-position" ng-style="redBallFrame"></div>
+
+                <div class="cup cup-position"></div>
+            </div>
+
+        </div>
+
+        <!-- cordova and dependencies -->
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <!-- third party and lib js -->
+        <!-- <script type="text/javascript" src="lib/angular.min.js"></script> -->
+        <script type="text/javascript" src="lib/angular.js"></script>
+        <script type="text/javascript" src="lib/firebase.js"></script>
+        <script type="text/javascript" src="lib/angularfire.min.js"></script>
+        
+
+        <!-- main module -->
+        <script type='application/javascript' src='app/app.module.js'></script>
+        <script type='application/javascript' src='app/cordovaInit.js'></script>
+
+        <!-- layout -->
+        <script type='application/javascript' src='app/layout/layout.module.js'></script>
+        <script type='application/javascript' src='app/layout/shell.js'></script>
+
+        <!-- services -->
+        <script type='application/javascript' src='app/services/services.module.js'></script>
+        <script type='application/javascript' src='app/services/wordService.js'></script>
+        <script type='application/javascript' src='app/services/actionService.js'></script>
+
+        <!-- virtualObjects -->
+        <script type='application/javascript' src='app/virtualObjects/virtualObjects.module.js'></script>
+        <script type='application/javascript' src='app/virtualObjects/virtualObjects.js'></script>
+
+        <!-- voiceInput feature -->
+        <script type='application/javascript' src='app/voiceInput/voiceInput.module.js'></script>
+        <script type='application/javascript' src='app/voiceInput/voiceInput.js'></script>
+
+
+    </body>
+
+
+</html>
